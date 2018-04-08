@@ -17,8 +17,9 @@ var commentRoutes    = require("./routes/comments"),
     villaRoutes      = require("./routes/villas"),
     indexRoutes      = require("./routes/index");
     
-//mongoose.connect("mongodb://localhost/yelp_villa_v10");
-mongoose.connect("mongodb://junzezhang:kg88121@ds239009.mlab.com:39009/yelpvilla");
+mongoose.connect(process.env.databaseURL);
+//mongoose.connect("mongodb://junzezhang:kg88121@ds239009.mlab.com:39009/yelpvilla");
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
